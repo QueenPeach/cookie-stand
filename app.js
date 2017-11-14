@@ -1,19 +1,28 @@
 'use strict';
 
-var hoursOp = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
-
 var storeOne = {
   name: '1st and Pike',
   minCust: 23,
   maxCust: 65,
   avgSale: 6.3,
+
+  custPerHour: function() {
+    console.log('1st and Pike:', storeOne);
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 };
+
 
 var storeTwo = {
   name: 'SeaTac Airport',
   minCust: 3,
   maxCust: 24,
   avgSale: 1.2,
+
+  custPerHour: function() {
+    console.log('SeaTac Airport:', storeTwo);
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 };
 
 var storeThree = {
@@ -21,6 +30,11 @@ var storeThree = {
   minCust: 11,
   maxCust: 38,
   avgSale: 3.7,
+
+  custPerHour: function() {
+    console.log('Seattle Center:', storeThree);
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 };
 
 var storeFour = {
@@ -28,11 +42,20 @@ var storeFour = {
   minCust: 20,
   maxCust: 38,
   avgSale: 2.3,
+
+  custPerHour: function() {
+    console.log('Capitol Hill:', storeFour);
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 };
 
-var storeFour = {
+var storeFive = {
   name: 'Alki',
   minCust: 2,
   maxCust: 16,
   avgSale: 4.6,
+
+  custPerHour: function() {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  }
 };
