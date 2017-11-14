@@ -10,7 +10,7 @@ var storeOne = {
 
   custPerHour: function() {
     console.log('1st and Pike:', storeOne);
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+    return Math.round(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
 
   cookiesPerHour: function() {
@@ -19,7 +19,7 @@ var storeOne = {
       console.log('custPerHour =' , this.custPerHour());
       console.log('this.avgSale = ', this.avgSale);
       console.log(this.custPerHour() * this.avgSale);
-      arr.push(this.custPerHour() * this.avgSale);
+      arr.push (Math.round(this.custPerHour() * this.avgSale));
     }
 
     var totalSum = 0;
@@ -30,6 +30,7 @@ var storeOne = {
     arr.push(totalSum);
     console.log('total sum:', totalSum);
     return arr;
+
   },
 };
 
@@ -42,7 +43,7 @@ var storeTwo = {
 
   custPerHour: function() {
     console.log('SeaTac Airport:', storeTwo);
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+    return Math.round(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
 
   cookiesPerHour: function() {
@@ -51,7 +52,7 @@ var storeTwo = {
       console.log('custPerHour =' , this.custPerHour());
       console.log('this.avgSale = ', this.avgSale);
       console.log(this.custPerHour() * this.avgSale);
-      arr.push(this.custPerHour() * this.avgSale);
+      arr.push (Math.round(this.custPerHour() * this.avgSale));
     }
 
     var totalSum = 0;
@@ -74,7 +75,7 @@ var storeThree = {
 
   custPerHour: function() {
     console.log('Seattle Center:', storeThree);
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+    return Math.round(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
 
   cookiesPerHour: function() {
@@ -83,8 +84,16 @@ var storeThree = {
       console.log('custPerHour =' , this.custPerHour());
       console.log('this.avgSale =', this.avgSale);
       console.log(this.custPerHour() * this.avgSale);
-      arr.push(this.custPerHour() * this.avgSale);
+      arr.push (Math.round(this.custPerHour() * this.avgSale));
     }
+
+    var totalSum = 0;
+    for(var j = 0; j < hoursOp.length; j++) {
+      totalSum += arr[j];
+    }
+
+    arr.push(totalSum);
+    console.log('total sum:', totalSum);
     return arr;
   },
 };
@@ -97,7 +106,7 @@ var storeFour = {
 
   custPerHour: function() {
     console.log('Capitol Hill:', storeFour);
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+    return Math.round(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
 
   cookiesPerHour: function() {
@@ -106,7 +115,7 @@ var storeFour = {
       console.log('custPerHour =' , this.custPerHour());
       console.log('this.avgSale = ', this.avgSale);
       console.log(this.custPerHour() * this.avgSale);
-      arr.push(this.custPerHour() * this.avgSale);
+      arr.push (Math.round(this.custPerHour() * this.avgSale));
     }
 
     var totalSum = 0;
@@ -129,7 +138,7 @@ var storeFive = {
 
   custPerHour: function() {
     console.log('Alki:', storeFive);
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+    return Math.round(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   },
 
   cookiesPerHour: function() {
@@ -138,7 +147,7 @@ var storeFive = {
       console.log('custPerHour =' , this.custPerHour());
       console.log('this.avgSale = ', this.avgSale);
       console.log(this.custPerHour() * this.avgSale);
-      arr.push(this.custPerHour() * this.avgSale);
+      arr.push (Math.round(this.custPerHour() * this.avgSale));
     }
 
     var totalSum = 0;
