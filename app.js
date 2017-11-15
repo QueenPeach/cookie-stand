@@ -9,9 +9,35 @@ function Store(name, minCust, maxCust, avgSale) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgSale = avgSale;
+  this.hourlyCookies = [];
+  this.dailyTotal = 0;
   locations.push(this);
+  // this.getHourlyCookies();
 }
 console.log('store:', Store);
+
+// new Store('1st and Pike', 23, 65, 6.3);
+// new Store('SeaTace', 3, 24, 1.2);
+// new Store('Seattle Center', 11, 38, 3.7);
+// new Store('Capitol Hill', 20, 38, 2.3);
+// new Store('Alki', 2, 16, 4.6);
+// console.log('locations:', locations);
+
+Store.prototype.getHourlyCookies = function() {
+  for(var i = 0; i < hoursOp.length; i++) {
+    this.hourlyCookies.push(Math.floor(this.getCustPerHour() * this.avgSales));
+    this.dailyTotal += this.hourlyCookies;
+  }
+  return this.hourlyCookies;
+};
+
+Store.prototype.getCustPerHour = function() {
+  return getRandomNum(this.minCust, this.maxCust);
+};
+
+function getRandomNum(min, max) {
+  return Math.round(Math.random() * (min, max) + min);
+}
 
 new Store('1st and Pike', 23, 65, 6.3);
 new Store('SeaTace', 3, 24, 1.2);
@@ -20,51 +46,76 @@ new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
 console.log('locations:', locations);
 
-(function run () {
-  Store.prototype.custPerHour = function() {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-  };
+for(var i = 0; i < locations.length; i ++) {
+  locations[i].getHourlyCookies();
+}
 
-  Store.prototype.cookiesPerHour = function() {
-    return Math.round(this.avgSale * this.custPerHour());
-  };
+function createTable() {
+  var tableEl = document.getElementById('main-table');
+  var header = createTableHead();
+  var body = createTableBody();
+  tableEl.appenedChild(header);
+  tableEl.appenedChild(body);
+}
 
-  Store.prototype.totalHours = function() {
-    var totalHours = [];
-    for(var j = 0; j < hoursOp.length; j++) {
-      totalHours.push(this.cookiesPerHour());
-    }
+function createTableHead() {
+  var theadEl = document.createElement('thead');
+  var headRow = createTableRow('', hoursOp, 'totals');
+  theadEL = appendChild(headRow);
+  return theadEl;
 
-    var totalSum = 0;
-    for(var k = 0; k < totalSum.length; k++) {
-      totalSum += totalHours[k];
-    }
-    totalHours.push(totalSum);
-    console.log('total hours:', totalHours);
-    return totalHours;
-  };
-})();
+}
 
-Store.tablHours = function() {
-  var tablEl = document.getElementById('main-table');
-  var tbody = document.createElement('tbody');
-  tbody.id = 'tbodyEL';
-  tablEl.appendChild(tbody);
-
-  var trEl = document.createElement('tr');
-  tbody.appendChild(trEl);
-
-  var tdEl = document.createElement('td');
-  trEl.appendChild(tdEl);
-
-  for (var i = 0; i < hoursOp.length; i++); {
-    tdEl = document.createElement('td');
-    var time = hoursOp[i];
-    tdEl.textContent = time;
-    trEl.appendChild(tdEl);
+function createTableBody() {
+  var tbodyEl = document.createElement('tbody');
+  for(var k = 0; k < locations.length; k++) {
+    var bodyRow = createTableRow(locations[k].name, locations[k].hourlyCookies, locations[k].dailyTotal);
+    tbodyEl.appendChild(bodyRow);
   }
-};
-Store.tablHours();
+  return tbodyEl;
+}
+
+function createTableRow(verticalHeader, dataPoints, verticalFooter) {
+  var trEL = document.createElement('tr');
+  var tdElOne = document.createElement('td');
+  tdElOne.textContent = verticalHeader;
+  trEl.appendChild(tdElOne);
+
+  for(var j = 0; j < dataPoints.length; j++) {
+    var tdElTwo = document.createElement('td');
+    tdElTwo.textContent = dataPoints[j];
+    trEl.appendChild(tdElTwo);
+  }
+
+  var tdELThree = document.createElement('tr');
+  tdElThree.textContent = verticalFooter;
+  trEl.appendChild(tdElThree);
+
+  return trEl;
+}
+
+
+
+// Store.tablHours = function() {
+//   var tablEl = document.getElementById('main-table');
+//   var tbody = document.createElement('tbody');
+//   tbody.id = 'tbodyEL';
+//   tablEl.appendChild(tbody);
+//
+//   var trEl = document.createElement('tr');
+//   tbody.appendChild(trEl);
+//
+//   var tdEl = document.createElement('td');
+//   trEl.appendChild(tdEl);
+//
+//   for (var i = 0; i < hoursOp.length; i++); {
+//     tdEl = document.createElement('td');
+//     var time = hoursOp[i];
+//     tdEl.textContent = time;
+//     trEl.appendChild(tdEl);
+//   }
+// };
+// Store.tablHours();
 
 
 
