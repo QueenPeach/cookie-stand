@@ -32,6 +32,25 @@ var storeOne = {
     return arr;
 
   },
+
+  pubList: function() {
+    var cookiesPerHour = this.cookiesPerHour();
+
+    var paragraph = document.createElement('p');
+    var liName = document.createTextNode(this.name);
+    paragraph.appendChild(liName);
+    var liStart = document.getElementById('start');
+    liStart.insertBefore(paragraph, document.getElementById('1'));
+
+    for (var i = 0; i < hoursOp.length; i++){
+      var time = document.createElement('li');
+      time.appendChild(document.createTextNode(hoursOp[i] + ': ' + cookiesPerHour[i] + ' cookies'));
+      document.getElementById('1').appendChild(time);
+    }
+    var totalCookies = document.createElement('li');
+    totalCookies.appendChild(document.createTextNode('Total: ' + cookiesPerHour[15] + ' cookies'));
+    document.getElementById('1').appendChild(totalCookies);
+  }
 };
 
 
@@ -64,6 +83,25 @@ var storeTwo = {
     console.log('total sum:', totalSum);
     return arr;
   },
+
+  pubList: function() {
+    var cookiesPerHour = this.cookiesPerHour();
+
+    var paragraph = document.createElement('p');
+    var liName = document.createTextNode(this.name);
+    paragraph.appendChild(liName);
+    var liStart = document.getElementById('start');
+    liStart.insertBefore(paragraph, document.getElementById('2'));
+
+    for (var i = 0; i < hoursOp.length; i++){
+      var time = document.createElement('li');
+      time.appendChild(document.createTextNode(hoursOp[i] + ': ' + cookiesPerHour[i] + ' cookies'));
+      document.getElementById('2').appendChild(time);
+    }
+    var totalCookies = document.createElement('li');
+    totalCookies.appendChild(document.createTextNode('Total: ' + cookiesPerHour[15] + ' cookies'));
+    document.getElementById('2').appendChild(totalCookies);
+  }
 };
 
 
@@ -96,6 +134,24 @@ var storeThree = {
     console.log('total sum:', totalSum);
     return arr;
   },
+  pubList: function() {
+    var cookiesPerHour = this.cookiesPerHour();
+
+    var paragraph = document.createElement('p');
+    var liName = document.createTextNode(this.name);
+    paragraph.appendChild(liName);
+    var liStart = document.getElementById('start');
+    liStart.insertBefore(paragraph, document.getElementById('3'));
+
+    for (var i = 0; i < hoursOp.length; i++){
+      var time = document.createElement('li');
+      time.appendChild(document.createTextNode(hoursOp[i] + ': ' + cookiesPerHour[i] + ' cookies'));
+      document.getElementById('3').appendChild(time);
+    }
+    var totalCookies = document.createElement('li');
+    totalCookies.appendChild(document.createTextNode('Total: ' + cookiesPerHour[15] + ' cookies'));
+    document.getElementById('3').appendChild(totalCookies);
+  }
 };
 
 var storeFour = {
@@ -127,6 +183,24 @@ var storeFour = {
     console.log('total sum:', totalSum);
     return arr;
   },
+  pubList: function() {
+    var cookiesPerHour = this.cookiesPerHour();
+
+    var paragraph = document.createElement('p');
+    var liName = document.createTextNode(this.name);
+    paragraph.appendChild(liName);
+    var liStart = document.getElementById('start');
+    liStart.insertBefore(paragraph, document.getElementById('4'));
+
+    for (var i = 0; i < hoursOp.length; i++){
+      var time = document.createElement('li');
+      time.appendChild(document.createTextNode(hoursOp[i] + ': ' + cookiesPerHour[i] + ' cookies'));
+      document.getElementById('4').appendChild(time);
+    }
+    var totalCookies = document.createElement('li');
+    totalCookies.appendChild(document.createTextNode('Total: ' + cookiesPerHour[15] + ' cookies'));
+    document.getElementById('4').appendChild(totalCookies);
+  }
 };
 
 
@@ -159,4 +233,28 @@ var storeFive = {
     console.log('total sum:', totalSum);
     return arr;
   },
+  pubList: function() {
+    var cookiesPerHour = this.cookiesPerHour();
+
+    var paragraph = document.createElement('p');
+    var liName = document.createTextNode(this.name);
+    paragraph.appendChild(liName);
+    var liStart = document.getElementById('start');
+    liStart.insertBefore(paragraph, document.getElementById('5'));
+
+    for (var i = 0; i < hoursOp.length; i++){
+      var time = document.createElement('li');
+      time.appendChild(document.createTextNode(hoursOp[i] + ': ' + cookiesPerHour[i] + ' cookies'));
+      document.getElementById('5').appendChild(time);
+    }
+    var totalCookies = document.createElement('li');
+    totalCookies.appendChild(document.createTextNode('Total: ' + cookiesPerHour[15] + ' cookies'));
+    document.getElementById('5').appendChild(totalCookies);
+  }
 };
+
+storeOne.pubList();
+storeTwo.pubList();
+storeThree.pubList();
+storeFour.pubList();
+storeFive.pubList();
