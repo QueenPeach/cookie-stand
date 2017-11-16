@@ -78,3 +78,15 @@ function createTableRow(vertHeader, dataPoints, vertFooter) {
 }
 
 createTable();
+
+var formEl = document.getElementById('main-form');
+
+function onSubmit(event) {
+  event.preventDefault();
+  var formData = {
+    nameForm: event.target.nameForm.value,
+    minForm: parseInt(event.target.minForm.value),
+    maxForm: parseInt(event.target.maxForm.value),
+    avgForm: parseFloat(event.target.avgForm.value),
+  };
+}
