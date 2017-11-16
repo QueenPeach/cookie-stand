@@ -74,6 +74,7 @@ function createTableRow(vertHeader, dataPoints, vertFooter) {
   var tdElThree = document.createElement('td');
   tdElThree.textContent = vertFooter;
   trEl.appendChild(tdElThree);
+
   return trEl;
 }
 
@@ -83,10 +84,20 @@ var formEl = document.getElementById('main-form');
 
 function onSubmit(event) {
   event.preventDefault();
-  var formData = {
-    nameForm: event.target.nameForm.value,
-    minForm: parseInt(event.target.minForm.value),
-    maxForm: parseInt(event.target.maxForm.value),
-    avgForm: parseFloat(event.target.avgForm.value),
-  };
+  var formData = {};
+  formData.location = event.target.location.value;
+  formData.minCust = parseInt(event.target.minCust.value);
+  formData.maxCust = parseInt(event.target.maxCust.value);
+  formData.avgCookieSale = parseFloat(event.target.avgCookieSale.value);
+  console.log('form data:', formData);
+
+  var place = new Store(formData.location, formData.minCust, formData.maxCust, formData.avgCookieSale);
+  console.log('new store:', place);
+
+  let tableEl = document.getElementById('main-table');
+  tableEl.innerHTML = '';
+  createTable();
+
 }
+
+formEl.addEventListener('submit', onSubmit);
