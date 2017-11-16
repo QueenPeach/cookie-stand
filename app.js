@@ -32,6 +32,29 @@ function getRandomNum(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
+// new Store('1st and Pike', 23, 65, 6.3);
+// new Store('SeaTace', 3, 24, 1.2);
+// new Store('Seattle Center', 11, 38, 3.7);
+// new Store('Capitol Hill', 20, 38, 2.3);
+// new Store('Alki', 2, 16, 4.6);
+// console.log('locations:', locations);
+
+Store.prototype.getHourlyCookies = function() {
+  for(var i = 0; i < hoursOp.length; i++) {
+    this.hourlyCookies.push(Math.floor(this.getCustPerHour() * this.avgSales));
+    this.dailyTotal += this.hourlyCookies;
+  }
+  return this.hourlyCookies;
+};
+
+Store.prototype.getCustPerHour = function() {
+  return getRandomNum(this.minCust, this.maxCust);
+};
+
+function getRandomNum(min, max) {
+  return Math.round(Math.random() * (min, max) + min);
+}
+
 new Store('1st and Pike', 23, 65, 6.3);
 new Store('SeaTac Airport', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
