@@ -6,10 +6,10 @@ body {
 .main-header {
   text-align: center;
   background-color: #A08C86;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
-.h2One {
+.h2PatsCookies {
 
 text-align: center;
 font-size: 270%;
@@ -21,23 +21,77 @@ color: #906355;
 
 }
 
-.h3One {
+
+.h3AboutCookies {
 
 text-align: left;
 font-family: 'Lobster Two', cursive;
 text-shadow: 2px 2px 3px black;
-font-size: 150%;
+font-size: 170%;
 color: #C8ABA1;
-margin-left: 68px;
+margin-left: 58px;
 margin-bottom: -70px;
 
 }
 
 .pAbout {
+
+    display: inline-block;
     width: 300px;
     border: 3px solid black;
     padding: 60px;
     margin: 15px;
-    margin-top: 30px;
+    border-radius: 10px;
     background-color: #FFF1EC;
+    font-family: helvetica;
+    float: left;
+
+}
+
+.linkSalesPage {
+
+display: inline-block;
+font-family: 'Lobster Two', cursive;
+text-align: right;
+font-size: 170%;
+position: absolute;
+z-index: 3;
+margin-left: 590px;
+margin-top: 70px;
+text-shadow: 2px 2px 3px black;
+
+}
+
+
+.cookie {
+
+  display: inline-block;
+  width: 300px;
+  height: 199px;
+  border: 3px solid black;
+  padding: 60px;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: #C8ABA1;
+  margin-bottom: -68px;
+  float: right;
+
+}
+
+.family {
+
+display: inline-block;
+width: 300px;
+height: 199px;
+border: 3px solid black;
+border-radius: 10px;
+padding: 60px;
+margin: 15px;
+background-color: #906355;
+float: center;
+margin-left: 4px;
+margin-top: 50px;
+position: absolute;
+z-index: 1;
+
 }
