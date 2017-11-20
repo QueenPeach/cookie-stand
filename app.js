@@ -28,6 +28,7 @@ Store.prototype.getHourlyCookies = function() {
   return this.hourlyCookies;
 };
 
+
 new Store('1st and Pike', 23, 65, 6.3);
 new Store('SeaTac Airport', 3, 24, 1.2);
 new Store('Seattle Center', 11, 38, 3.7);
@@ -40,6 +41,7 @@ function getRandomNum(min, max) {
 
 function createTable() {
   var tableEl = document.getElementById('main-table');
+
   tableEl.appendChild(createTableHead());
   tableEl.appendChild(createTableBody());
 }
@@ -65,6 +67,8 @@ function createTableRow(vertHeader, dataPoints, vertFooter) {
   var trEl = document.createElement('tr');
   var tdElOne = document.createElement('td');
   tdElOne.textContent = vertHeader;
+
+
   trEl.appendChild(tdElOne);
 
   for(var x = 0; x < dataPoints.length; x++) {
@@ -103,3 +107,4 @@ function onSubmit(event) {
 }
 
 formEl.addEventListener('submit', onSubmit);
+
