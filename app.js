@@ -28,9 +28,6 @@ Store.prototype.getHourlyCookies = function() {
   return this.hourlyCookies;
 };
 
-function getRandomNum(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
 
 new Store('1st and Pike', 23, 65, 6.3);
 new Store('SeaTac Airport', 3, 24, 1.2);
@@ -38,9 +35,13 @@ new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki', 2, 16, 4.6);
 
+function getRandomNum(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
 
 function createTable() {
-  var tableEl = document.getElementById('main-tbl');
+  var tableEl = document.getElementById('main-table');
+
   tableEl.appendChild(createTableHead());
   tableEl.appendChild(createTableBody());
 }
@@ -62,10 +63,12 @@ function createTableBody() {
   return tbodyEl;
 }
 
-function createTableRow(verticalHeader, dataPoints, verticalFooter) {
+function createTableRow(vertHeader, dataPoints, vertFooter) {
   var trEl = document.createElement('tr');
   var tdElOne = document.createElement('td');
-  tdElOne.textContent = verticalHeader;
+  tdElOne.textContent = vertHeader;
+
+
   trEl.appendChild(tdElOne);
 
   for(var x = 0; x < dataPoints.length; x++) {
@@ -75,9 +78,33 @@ function createTableRow(verticalHeader, dataPoints, verticalFooter) {
   }
 
   var tdElThree = document.createElement('td');
-  tdElThree.textContent = verticalFooter;
+  tdElThree.textContent = vertFooter;
   trEl.appendChild(tdElThree);
+
   return trEl;
 }
 
 createTable();
+
+var formEl = document.getElementById('main-form');
+
+function onSubmit(event) {
+  event.preventDefault();
+  var formData = {};
+  formData.location = event.target.location.value;
+  formData.minCust = parseInt(event.target.minCust.value);
+  formData.maxCust = parseInt(event.target.maxCust.value);
+  formData.avgCookieSale = parseFloat(event.target.avgCookieSale.value);
+  console.log('form data:', formData);
+
+  var place = new Store(formData.location, formData.minCust, formData.maxCust, formData.avgCookieSale);
+  console.log('new store:', place);
+
+  let tableEl = document.getElementById('main-table');
+  tableEl.innerHTML = '';
+  createTable();
+
+}
+
+formEl.addEventListener('submit', onSubmit);
+

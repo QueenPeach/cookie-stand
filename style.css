@@ -1,0 +1,266 @@
+.index {
+
+  background-color: #837672;
+}
+
+.main-header {
+
+  text-align: center;
+  background-color: #A08C86;
+  margin-bottom: 30px;
+}
+
+.h2PatsCookies {
+  text-align: center;
+  font-size: 270%;
+  font-family: 'Lobster Two', cursive;
+  margin-top: -35px;
+  margin-right: 160px;
+  text-shadow: 2px 2px 3px black;
+  color: #906355;
+}
+
+.contactInfo {
+
+  position:absolute;
+  float: left;
+  font-family: 'Lobster Two', cursive;
+  text-shadow: 2px 2px 3px black;
+  color: #FFF1EC;
+  margin-top: -300px;
+  margin-left: 10px;
+}
+
+.phone {
+
+  position:absolute;
+  float: left;
+  font-family: 'Lobster Two', cursive;
+  text-shadow: 2px 2px 3px black;
+  color: white;
+  margin-top: -270px;
+  margin-left: 10px;
+}
+
+.address {
+
+  position:absolute;
+  float: left;
+  font-family: 'Lobster Two', cursive;
+  text-shadow: 2px 2px 3px black;
+  color: #FFF1EC;
+  margin-top: -240px;
+  margin-left: 10px;
+}
+
+.hours {
+
+  position:absolute;
+  float: left;
+  font-family: 'Lobster Two', cursive;
+  text-shadow: 2px 2px 3px black;
+  color: white;
+  margin-top: -180px;
+  margin-left: 10px;
+}
+
+.infoHoursAddress {
+
+  margin-top: 80px;
+}
+
+
+.h3AboutCookies {
+
+  position:absolute;
+  text-align: left;
+  font-family: 'Lobster Two', cursive;
+  text-shadow: 2px 2px 3px black;
+  font-size: 170%;
+  color: #C8ABA1;
+  margin-left: 58px;
+  margin-bottom: -70px;
+  margin-top: -10px;
+}
+
+.pAbout {
+
+    display: inline-block;
+    width: 300px;
+    border: 3px solid white;
+    padding: 60px;
+    margin: 15px;
+    margin-top: -30px;
+    border-radius: 10px;
+    background-color: #FFF1EC;
+    font-family: helvetica;
+    float: left;
+}
+
+.linkSalesPage {
+
+  display: inline-block;
+  font-family: 'Lobster Two', cursive;
+  text-align: right;
+  font-size: 170%;
+  position: absolute;
+  z-index: 3;
+  margin-left: 600px;
+  margin-top: -12px;
+  text-shadow: 2px 2px 3px black;
+}
+
+
+.cookie {
+
+  display: inline-block;
+  width: 300px;
+  height: 199px;
+  border: 3px solid white;
+  padding: 60px;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: #FFF1EC;
+  margin-bottom: -68px;
+  float: right;
+  margin-top: -30px;
+
+}
+
+.patFamily {
+
+  position: absolute;
+  font-family: 'Lobster Two', cursive;
+  font-size: 170%;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  margin-left: 590px;
+  margin-top: -12px;
+  z-index: 3
+}
+
+
+.family {
+
+  display: inline-block;
+  width: 300px;
+  height: 199px;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 60px;
+  margin: 15px;
+  background-color: #C8ABA1;
+  float: center;
+  margin-left: 4px;
+  margin-top: -30px;
+  position: absolute;
+  z-index: 1;
+}
+
+.sales {
+
+  background-color: #A08C86;
+}
+
+.sales .update {
+
+position: absolute;
+font-family: 'Lobster Two', cursive;
+font-size: 300%;
+color: #837672;
+text-shadow: 2px 2px 3px black;
+margin-left: 20px;
+z-index: 3;
+
+}
+
+.sales #main-form {
+
+  position: absolute;
+  margin-left: 20px;
+  padding: 15px;
+  border: 3px solid #A08C86;
+  border-radius: 10px;
+  margin-top: -80px;
+  background-color: #FFF1EC;
+  z-index: 3;
+}
+
+.sales header {
+
+  background-color: white;
+}
+
+.sales .chinook {
+
+  margin-left: 850px;
+}
+
+.sales #main-table {
+
+  position: absolute;
+  border: 3px solid #FFF1EC;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 10px;
+  background-image: url(assets/fish.jpg);
+  font-family: helvetica;
+  text-shadow: 3px 3px 4px black;
+  color: #FFF1EC;
+  z-index: 3;
+}
+
+.merch {
+
+  width: 250px;
+  margin-left: 1050px;
+  border: 3px solid #906355;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.cutter {
+
+  position: absolute;
+  width: 250px;
+  margin-left: 800px;
+  border: 3px solid #906355;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.merchText {
+
+  position: absolute;
+  font-family: 'Lobster Two', cursive;
+  font-size: 250%;
+  text-shadow: 2px 2px 3px black;
+  color: #906355;
+  margin-top: -115px;
+  margin-left: 100px;
+
+}
+
+.merchHere {
+
+  position: absolute;
+  font-family: 'Lobster Two', cursive;
+  font-size: 250%;
+  margin-left: 920px;
+  margin-top: 2px;
+  color: #FFF1EC;
+  text-shadow: 2px 2px 3px black;
+  z-index: 3;
+}
+
+.linkHome {
+
+  font-family: 'Lobster Two', cursive;
+  text-align: right;
+  font-size: 170%;
+  text-shadow: 2px 2px 3px black;
+  margin-top: 150px;
+  margin-right: 400px;
+
+}
