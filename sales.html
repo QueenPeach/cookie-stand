@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>
+  <title>Pat's Cookies</title>
     <link rel="stylesheet" href="style.css">
-  </title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
 </head>
 <header>
+  <h2 class = "update">New Store Update:</h2>
+  <img class = "chinook" src = "assets/chinook.jpg" alt = "Picture of Chinook">
 </header>
 
-<body>
+<body class = "sales">
   <main>
-    <h1>Cookie Stand</h1>
+    <form id = "main-form">
+      <input name = "location" type = "text" placeholder = "Location"</p>
+      <input name = "minCust" type = "number" placeholder = "Minimum Customers" min = "0">
+      <input name = "maxCust" type = "number" placeholder = "Maximum Customers" min = "0">
+      <input name = "avgCookieSale" type = "number" placeholder = "Cookie Sales" min = "0">
+      <input name = "submit" type = "submit">
+    </form>
      <table id = 'main-table'></table>
-     <h2>New Store</h2>
-     <form id = "main-form">
-       <input name = "location" type = "text" placeholder = "Location"</p>
-       <input name = "minCust" type = "number" placeholder = "Minimum Customers">
-       <input name = "maxCust" type = "number" placeholder = "Maximum Customers">
-       <input name = "avgCookieSale" type = "number" placeholder = "Cookie Sales">
-       <input name = "submit" type = "submit">
-     </form>
+     <h3 class = "merchHere">Cool Merch Here</h3>
+     <img class = "cutter" src = "assets/cutter.jpeg" alt = "Fish Cookie Cutter" >
+     <img class = "merch" src = "assets/shirt.jpg" alt = "Fish Tee Shirt">
   </main>
+  <h2 class = "merchText">Don't forget to checkout<br>
+              Pat's Salmon Cookies Merchandise!</h2>
 </body>
 
 <footer>
